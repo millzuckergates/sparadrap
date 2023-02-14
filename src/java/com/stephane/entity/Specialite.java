@@ -1,21 +1,22 @@
 package com.stephane.entity;
-public class Specialiste extends Personne{
 
+public class Specialite {
 
     //--------------------- CONSTANTS ------------------------------------------
 
     //--------------------- STATIC VARIABLES -----------------------------------
 
-
     //--------------------- INSTANCE VARIABLES ---------------------------------
-    private Specialite specialite;
+    private int idSpecialite;
+    private String label;
+
+    public Specialite(int idSpecialite, String label) {
+        this.setIdSpecialite(idSpecialite);
+        this.setLabel(label);
+    }
+
     //--------------------- CONSTRUCTORS ---------------------------------------
 
-        public Specialiste(int idPersonne, String nom, String prenom, String codePostal, String ville, String telephone, String mail, Specialite specialite) {
-            super(idPersonne, nom, prenom, codePostal, ville, telephone, mail);
-
-            this.setSpecialite(specialite);
-        }
     //--------------------- STATIC METHODS -------------------------------------
 
     //--------------------- INSTANCE METHODS -----------------------------------
@@ -25,13 +26,21 @@ public class Specialiste extends Personne{
     //--------------------- STATIC - GETTERS - SETTERS -------------------------
 
     //--------------------- GETTERS - SETTERS ----------------------------------
-    public Specialite getSpecialite() {
-        return specialite;
-    }
-    public void setSpecialite(Specialite specialite) {
-        this.specialite = specialite;
+
+    public int getIdSpecialite() {
+        return idSpecialite;
     }
 
+    public void setIdSpecialite(int idSpecialite) {
+        this.idSpecialite = idSpecialite;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
     //--------------------- TO STRING METHOD------------------------------------
 }
-

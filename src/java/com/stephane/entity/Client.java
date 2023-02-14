@@ -13,13 +13,17 @@ public class Client extends Personne {
     //--------------------- INSTANCE VARIABLES ---------------------------------
     private String numeroSecu;
     private LocalDate dateDeNaissance;
+    private Medecin medecinTraitant;
+    private Mutuelle mutuelle;
 
     //--------------------- CONSTRUCTORS ---------------------------------------
 
-    public Client(int idPersonne, String nom, String prenom, String codePostal, String ville, String telephone, String mail, String numeroSecu) {
+    public Client(int idPersonne, String nom, String prenom, String codePostal, String ville, String telephone, String mail, String numeroSecu, Medecin medecinTraitant, Mutuelle mutuelle) {
         super(idPersonne, nom, prenom, codePostal, ville, telephone, mail);
         this.setNumeroSecu(numeroSecu);
         this.setDateDeNaissance(dateDeNaissance);
+        this.setMedecinTraitant(medecinTraitant);
+        this.setMutuelle(mutuelle);
     }
 
     //--------------------- STATIC METHODS -------------------------------------
@@ -50,6 +54,21 @@ public class Client extends Personne {
 
     public void setDateDeNaissance(LocalDate dateDeNaissance) {
         this.dateDeNaissance = dateDeNaissance;
+    }
+    public Medecin getMedecinTraitant() {
+        return medecinTraitant;
+    }
+
+    public void setMedecinTraitant(Medecin medecinTraitant) {
+        this.medecinTraitant = medecinTraitant;
+    }
+
+    public Mutuelle getMutuelle() {
+        return mutuelle;
+    }
+
+    public void setMutuelle(Mutuelle mutuelle) {
+        this.mutuelle = mutuelle;
     }
 
     //--------------------- TO STRING METHOD------------------------------------
