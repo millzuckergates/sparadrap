@@ -2,6 +2,9 @@ package com.stephane.entity;
 
 import com.stephane.utility.ControleDeValeur;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class Mutuelle {
 
     //--------------------- CONSTANTS ------------------------------------------
@@ -15,17 +18,24 @@ public class Mutuelle {
     private String adresse;
     private String codePostal;
     private String telephone;
+    private Departement departement;
+    private Map<Integer, Medicament> medocMap;
     //--------------------- CONSTRUCTORS ---------------------------------------
 
-    public Mutuelle(int idMutuelle, String nom, String adresse, String codePostal, String telephone) {
+    public Mutuelle(int idMutuelle, String nom, String adresse, String codePostal, String telephone, Map<Integer, Medicament> medocMap) {
         this.setIdMutuelle(idMutuelle);
         this.setNom(nom);
         this.setAdresse(adresse);
         this.setCodePostal(codePostal);
         this.setTelephone(telephone);
+        this.setDepartement(departement);
+        this.setMedocMap(medocMap);
+
+
     }
 
     //--------------------- STATIC METHODS -------------------------------------
+    private static ArrayList<Mutuelle> mutuelleList = new ArrayList<>();
 
     //--------------------- INSTANCE METHODS -----------------------------------
 
@@ -80,6 +90,28 @@ public class Mutuelle {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+    public Departement getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
+    public Map<Integer, Medicament> getMedocMap() {
+        return medocMap;
+    }
+
+    public void setMedocMap(Map<Integer, Medicament> medocMap) {
+        this.medocMap = medocMap;
+    }
+
+    public static ArrayList<Mutuelle> getMutuelleList() {
+        return mutuelleList;
+    }
+
+    public static void setMutuelleList(ArrayList<Mutuelle> mutuelleList) {
+        Mutuelle.mutuelleList = mutuelleList;
     }
     //--------------------- TO STRING METHOD------------------------------------
 }

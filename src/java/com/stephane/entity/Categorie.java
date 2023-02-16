@@ -1,24 +1,23 @@
 package com.stephane.entity;
 
-import com.stephane.utility.ControleDeValeur;
-
 import java.util.ArrayList;
 
-
-public class Medecin extends Personne implements Prescripteur {
+public class Categorie {
 
     //--------------------- CONSTANTS ------------------------------------------
 
     //--------------------- STATIC VARIABLES -----------------------------------
-    private static ArrayList<Medecin> medecinList = new ArrayList<>();
+    private static ArrayList<Categorie> categorieList = new ArrayList<>();
+
     //--------------------- INSTANCE VARIABLES ---------------------------------
-    private String numeroAgrement;
+    private int idCategorie;
+    private String label;
 
     //--------------------- CONSTRUCTORS ---------------------------------------
 
-    public Medecin(int idPersonne, String nom, String prenom, String codePostal, String ville, String telephone, String mail, String numeroAgrement) {
-        super(idPersonne, nom, prenom, codePostal, ville, telephone, mail);
-        this.setNumeroAgrement(numeroAgrement);
+    public Categorie(int idCategorie, String label) {
+        this.setCategorie(categorie);
+        this.setLabel(label);
     }
 
     //--------------------- STATIC METHODS -------------------------------------
@@ -31,17 +30,20 @@ public class Medecin extends Personne implements Prescripteur {
 
     //--------------------- GETTERS - SETTERS ----------------------------------
 
-    public String getNumeroAgrement() {
-        return numeroAgrement;
+    public int getIdCategorie() {
+        return idCategorie;
     }
 
-    public void setNumeroAgrement(String numeroAgrement) {
-        if (ControleDeValeur.codePostalValide(numeroAgrement) || this.numeroAgrement.length() != 11){
-            System.out.println("Erreur sur le num d'agrement'");
-        }else{
-            this.numeroAgrement = numeroAgrement;
-        }
+    public void setIdCategorie(int idCategorie) {
+        this.idCategorie = idCategorie;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
     //--------------------- TO STRING METHOD------------------------------------
 }
-

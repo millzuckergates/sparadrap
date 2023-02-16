@@ -1,10 +1,13 @@
 package com.stephane.entity;
 
+import java.util.ArrayList;
+
 public class Specialite {
 
     //--------------------- CONSTANTS ------------------------------------------
 
     //--------------------- STATIC VARIABLES -----------------------------------
+    private static ArrayList<Specialite> specialiteList = new ArrayList<>();
 
     //--------------------- INSTANCE VARIABLES ---------------------------------
     private int idSpecialite;
